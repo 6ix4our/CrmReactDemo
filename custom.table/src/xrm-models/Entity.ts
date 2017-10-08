@@ -1,6 +1,6 @@
 import EntityReference from './EntityReference';
 import { IEntitySchema } from './IEntitySchema';
-import { Collection, EntityAttributes, SanitizeId, ValidateId } from './DataTypes';
+import { Collection, EntityAttributes, SanitizeId, ValidateId, DataItem, EntityCollection } from './DataTypes';
 
 class Entity {
     public Attributes: EntityAttributes = {};
@@ -25,6 +25,11 @@ class Entity {
 
     public ToEntityReference() {
         return new EntityReference(this.Schema, this.Id);
+    }
+
+    public GetAttributeValue<T extends DataItem | EntityCollection>(attributeName: string)
+    {
+        return this.Attributes[attributeName] as T;
     }
 
     public toJSON() {
