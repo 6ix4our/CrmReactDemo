@@ -25,7 +25,7 @@ const TableApp: React.StatelessComponent<TableState> = (props) => {
         rows.push(<TableAppRow RowIndex={i} />);
 
     return (
-        <Table celled={true}>
+        <Table size="small" celled={true}>
             <Transition.Group animation="fade" duration={1000} >
                 <Dimmer active={IsLoading}>
                     <Loader>Loading...</Loader>
