@@ -2,7 +2,7 @@ import * as React from 'react';
 import TableAppRow from './TableAppRow';
 import { connect, DispatchProp } from 'react-redux';
 import { Table, Transition, Dimmer, Loader, Button, Icon } from 'semantic-ui-react';
-import { MapTableStateToProps, MapTableDispatchToProps } from './AppPropMappers';
+import { MapStateToTableProps, MapDispatchToTableProps } from './AppPropMappers';
 import { IAppState } from './table-store';
 
 type TableState = ITableStateProps & ITableDispatchProps & DispatchProp<IAppState>;
@@ -50,5 +50,5 @@ const TableApp: React.StatelessComponent<TableState> = (props) => {
 };
 
 /// This is a typing work-around
-export default connect(MapTableStateToProps, MapTableDispatchToProps)(TableApp) as
+export default connect(MapStateToTableProps, MapDispatchToTableProps)(TableApp) as
     object as React.StatelessComponent;
