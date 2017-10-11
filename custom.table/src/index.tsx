@@ -1,11 +1,16 @@
-import * as React from 'react';
-import * as ReactDOM from 'react-dom';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
 import './index.css';
+import * as React from 'react';
+import TableApp from './TableApp';
+import { TableStore } from './table-store';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { LoadTable } from './table-actions';
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root') as HTMLElement
+render(
+    <Provider store={TableStore}>
+        <TableApp />
+    </Provider>,
+    document.getElementById('root') as HTMLElement
 );
-registerServiceWorker();
+
+TableStore.dispatch(LoadTable());
