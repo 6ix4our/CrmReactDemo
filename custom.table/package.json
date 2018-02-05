@@ -3,8 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@types/react-redux": "^5.0.9",
-    "@types/xrm": "^8.2.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-redux": "^5.0.6",
@@ -20,9 +18,12 @@
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
+    "@types/react-redux": "^5.0.9",
+    "@types/xrm": "^8.2.7",
     "@types/jest": "^21.1.0",
     "@types/node": "^8.0.30",
-    "@types/react": "^16.0.5",
-    "@types/react-dom": "^15.5.4"
+    "@types/react": "^15.0.5",
+    "@types/react-dom": "^15.5.4",
+    "@types/react-test-renderer": "^16.0.0"
   }
 }
